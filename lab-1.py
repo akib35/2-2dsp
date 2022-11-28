@@ -1,37 +1,7 @@
-import numpy as np
-
-import matplotlib.pyplot as plot
-
-# Get x values of the sine wave
-
-time = np.arange(0, 10, 0.1)
-
-# Amplitude of the sine wave is sine of a variable like time
-
-amplitude = np.cos(time)
-
-# Plot a sine wave using time and amplitude obtained for the sine wave
-
-plot.plot(time, amplitude)
-
-
-# Give a title for the sine wave plot
-
-plot.title('Sine wave')
-
-# Give x axis label for the sine wave plot
-
-plot.xlabel('Time')
-
-# Give y axis label for the sine wave plot
-
-plot.ylabel('Amplitude = sin(time)')
-
-plot.grid(True, which='both')
-
-plot.axhline(y=0, color='k')
-
-
-
-print(time)
-print(amplitude)
+from numpy import *
+from sympy import *
+a = numpy.arange(10)
+x = sympy.symbols('x')
+expr = sin(x)
+f = lambdify(x, expr, "numpy")
+print(f(a))
