@@ -1,5 +1,6 @@
-from numpy import *
+import sympy
 from sympy import *
+
 a = numpy.arange(10)
 x = sympy.symbols('x')
 expr = sin(x)
